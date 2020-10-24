@@ -1,0 +1,24 @@
+﻿@model CompanyModel
+
+<h1>Company Management</h1>
+
+<h2>Add new Company</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(x => x.Name, "Company name")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Description, "Company description")
+        @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+    </div>
+    <div class="form-control form-check">
+        @Html.CheckBoxFor(x => x.IsVisible, new { @class = "form-check-input" })
+        @Html.LabelFor(x => x.IsVisible, "Visible?", new { @class = "form-check-label" })
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Add Company</button>
+    </div>
+}
