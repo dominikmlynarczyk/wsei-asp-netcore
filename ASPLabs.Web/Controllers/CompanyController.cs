@@ -17,14 +17,22 @@ namespace ASPLabs.Web.Controllers
         [HttpPost]
         public IActionResult Index(CompanyModel company)
         {
-            var viewModel = new CompanyAddedViewModel
-            {
-                NumberOfCharsInName = company.Name.Length,
-                NumberOfChartsInDescription = company.Description.Length,
-                IsHidden = !company.IsVisible
-            };
+            //var viewModel = new CompanyAddedViewModel
+            //{
+            //    NumberOfCharsInName = company.Name.Length,
+            //    NumberOfChartsInDescription = company.Description.Length,
+            //    IsHidden = !company.IsVisible
+            //};
 
-            return View("CompanyAdded", viewModel);
+            //return View("CompanyAdded", viewModel);
+
+            return RedirectToAction("CompanyAdded");
+        }
+
+        [HttpGet]
+        public IActionResult CompanyAdded()
+        {
+            return View();
         }
     }
 }
